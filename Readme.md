@@ -131,12 +131,12 @@ Built with **Node.js** and **Express** featuring:
 
 ## 📡 Key API Endpoints
 
-| Area            | Routes                                                                                |
-| --------------- | ------------------------------------------------------------------------------------- |
-| Auth            | `POST /api/auth/register`, `POST /login`, `POST /otp/verify`, `POST /forgot-password` |
-| Movies & Shows  | CRUD endpoints: `GET /api/movies`, `POST /api/movies`, etc.                           |
-| Bookings        | `POST /api/book`, `GET /api/bookings/:id`                                             |
-| Admin Analytics | `GET /api/admin/stats`                                                                |
+| Area            |Routes                                                                                |
+| -------------- | ----------------------------------------------------------------------------------- |
+| Auth           | `POST /api/auth/register`, `POST /login`, `POST /otp/verify`, `POST /forgotpassword`|
+| Movies & Shows | CRUD endpoints: `GET /api/movies`, `POST /api/movies`, etc.                         |
+| Bookings        | `POST /api/book`, `GET/api/bookings/:id`                                           |
+| Admin Analytics | `GET/api/admin/stats`                                                              |
 
 For full route definitions, see `backend/routes/`.
 
