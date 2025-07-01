@@ -1,6 +1,4 @@
-Here's a polished, well-structured, and professional README file based on your content, formatted with clear sections and consistent style:
 
----
 
 # 🎟️ Movie Ticketing System
 
