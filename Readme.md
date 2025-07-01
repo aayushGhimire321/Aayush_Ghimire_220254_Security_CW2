@@ -1,67 +1,64 @@
-**🎟️ Movie Ticketing System**
+Here's a polished, well-structured, and professional README file based on your content, formatted with clear sections and consistent style:
 
-This project is a Movie Ticketing System built with the MERN Stack — MongoDB, Express.js, React, and Node.js. It delivers a secure, scalable, and responsive platform for cinema‑goers to book seats while giving admins full control over shows, analytics, and payments.
+---
 
-**📑 Table of Contents**
+# 🎟️ Movie Ticketing System
 
-**Features
+A secure, scalable, and responsive **Movie Ticketing System** built with the **MERN Stack** (MongoDB, Express.js, React, Node.js). This platform enables cinema-goers to book seats effortlessly, while providing admins full control over shows, analytics, and payments.
 
-Installation
+---
 
-Backend Setup
+## 📑 Table of Contents
 
-Frontend Setup
+* [Features](#-features)
+* [Installation](#-installation)
 
-Frontend Overview
+  * [Prerequisites](#-prerequisites)
+  * [Backend Setup](#-backend-setup)
+  * [Frontend Setup](#-frontend-setup)
+* [Frontend Overview](#-frontend-overview)
+* [Backend Overview](#-backend-overview)
+* [API Endpoints](#-key-api-endpoints)
+* [Security Design Principles](#-security-design-principles)
+* [Usage](#-usage)
+* [Notes](#-notes)
+* [Feedback](#-feedback)
 
-Backend Overview
+---
 
-Security Design Principles
+## 🚀 Features
 
-Usage
+* 🔐 **Authentication & Authorization** (JWT + Sessions)
+* 🧑‍💼 **Role-Based Access Control** (Admin / User)
+* 🎬 **Movie & Show Management** (CRUD operations)
+* 🎟️ **Interactive Seat Selection & Ticket Booking**
+* 💳 **Payment Gateway Integration** (e.g., Khalti)
+* 📊 **Admin Dashboard** with real-time analytics
+* 📱 **Responsive UI** — mobile-friendly
+* 🔔 **Toast Notifications** for instant feedback
+* 🛡️ **Brute-Force Protection** & audit logging
 
-Notes
+---
 
-**Feedback**
+## ⚙️ Installation
 
+### 🔧 Prerequisites
 
+* Node.js & npm
+* MongoDB (local instance or MongoDB Atlas)
 
+---
 
-**🚀 Features**
+### 🔙 Backend Setup
 
-🔐 Authentication & Authorisation (JWT + Session)
+```bash
+cd backend
+npm install
+```
 
-🧑‍💼 Role‑Based Access Control (Admin / User)
+Create a `.env` file in the `backend/` directory with the following variables:
 
-🎬 Movie & Show Management (CRUD)
-
-🎟️ Interactive Seat Selection & Ticket Booking
-
-💳 Payment Gateway Integration (e.g. Khalti)
-
-📊 Admin Dashboard with Real‑Time Analytics
-
-📱 Responsive UI (mobile‑friendly)
-
-🔔 Toast Notifications for instant feedback
-
-🛡️ Brute‑Force Protection & Audit Logging
-
-**⚙️ Installation**
-
-**🔧 Prerequisites**
-
-Node.js & npm
-
-MongoDB (local instance or MongoDB Atlas)
-
-**🔙 Backend Setup**
-
-cd backend        # 1. navigate to backend folder
-npm install       # 2. install dependencies
-
-**Create a .env file in backend/:**
-
+```env
 REACT_APP_API_URL=http://localhost:5000
 PORT=5000
 MONGODB_CLOUD=your_cloud_mongodb_connection_string
@@ -73,186 +70,155 @@ KHALTI_GATEWAY_URL=https://khalti.com/api/v2/payment/verify/
 ALLOWED_ORIGINS=https://localhost:3000,https://localhost:5000
 EMAIL_USER=your_email
 EMAIL_PASS=your_email_password
+```
 
-Then run:
+Start the backend server:
 
-npm start         # 3. start backend (http://localhost:5000)
+```bash
+npm start
+```
 
-**🖥️ Frontend Setup**
-
-cd frontend       # 1. navigate to frontend folder
-npm install       # 2. install dependencies
-npm start         # 3. start React dev server (http://localhost:3000)
-
-**🖼️ Frontend Overview**
-
-Built with React and powered by:
-
-Library
-
-Purpose
-
-Material UI (MUI)
-
-Theme & responsive components
-
-React Router
-
-Single‑page navigation
-
-Axios
-
-API communication
-
-React Toastify
-
-Notifications
-
-ProtectedRoute component
-
-Role‑based route guarding
-
-File highlights
-
-App.js: Declares public + protected routes, MUI theme provider, ToastContainer.
-
-components/: Shared UI (Navbar, Footer, Charts …).
-
-pages/: Split into Public, User, Admin sections.
-
-ProtectedRoute.js: Wrapper enforcing JWT + role checks.
-
-
-
-
-**🔧 Backend Overview**
-
-Powered by Node.js + Express with:
-
-Mongoose ODM (Users, Movies, Bookings …)
-
-JWT for stateless sessions & express‑session for optional server sessions
-
-bcrypt for password hashing
-
-express‑rate‑limit for IP‑based brute‑force blocking
-
-Custom per‑user lockout after repeated failures
-
-Winston / Morgan‑style logging middleware
-
-mongo‑sanitize & JOI for validation / sanitisation
-
-
-
-
-**📡 Key API Endpoints**
-
-Area
-
-Routes
-
-Auth
-
-POST /api/auth/register, POST /login, POST /otp/verify, POST /forgot-password
-
-Movies & Shows
-
-CRUD: GET /api/movies, POST /api/movies …
-
-Bookings
-
-POST /api/book, GET /api/bookings/:id
-
-Admin Analytics
-
-GET /api/admin/stats
-
-Refer to backend/routes/ for full route definitions.
-
-
-
-
-Here’s your updated **🔐 Security Design Principles** section with a bit more clarity and detail, incorporating the existing concepts clearly:
+Runs on: [http://localhost:5000](http://localhost:5000)
 
 ---
 
-### 🔐 Security Design Principles
+### 🖥️ Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+Runs on: [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🖼️ Frontend Overview
+
+Built with **React** using these core libraries:
+
+| Library           | Purpose                            |
+| ----------------- | ---------------------------------- |
+| Material UI (MUI) | Theming & responsive UI components |
+| React Router      | Client-side routing                |
+| Axios             | API communication                  |
+| React Toastify    | Notifications                      |
+| ProtectedRoute    | Role-based route guarding          |
+
+**Key files & folders:**
+
+* `App.js` — Defines public & protected routes, MUI theme provider, ToastContainer
+* `components/` — Shared UI components (Navbar, Footer, Charts, etc.)
+* `pages/` — Separated by Public, User, Admin sections
+* `ProtectedRoute.js` — Wraps routes enforcing JWT + role checks
+
+---
+
+## 🔧 Backend Overview
+
+Built with **Node.js** and **Express** featuring:
+
+* **Mongoose ODM** for database modeling (Users, Movies, Bookings, etc.)
+* JWT for stateless authentication + optional `express-session` support
+* bcrypt for password hashing
+* `express-rate-limit` for IP-based brute-force protection
+* Custom user lockout after repeated failed login attempts
+* Logging middleware (Winston/Morgan-style)
+* Input validation & sanitization using `mongo-sanitize` & JOI
+
+---
+
+## 📡 Key API Endpoints
+
+| Area            | Routes                                                                                |
+| --------------- | ------------------------------------------------------------------------------------- |
+| Auth            | `POST /api/auth/register`, `POST /login`, `POST /otp/verify`, `POST /forgot-password` |
+| Movies & Shows  | CRUD endpoints: `GET /api/movies`, `POST /api/movies`, etc.                           |
+| Bookings        | `POST /api/book`, `GET /api/bookings/:id`                                             |
+| Admin Analytics | `GET /api/admin/stats`                                                                |
+
+For full route definitions, see `backend/routes/`.
+
+---
+
+## 🔐 Security Design Principles
 
 1. **Authentication & Authorization**
 
-   * JWT-based authentication with secure HTTP-only cookies
-   * Optional server-side session management
-   * Role-based access control enforced via middleware guards
+   * JWT-based auth with secure HTTP-only cookies
+   * Optional server-side sessions
+   * Role-based access control via middleware
 
 2. **Input Sanitization & Validation**
 
-   * Use of `mongo-sanitize` to prevent NoSQL injection
-   * Schema validation with JOI to ensure data integrity and block XSS attacks
+   * `mongo-sanitize` to prevent NoSQL injection
+   * JOI schema validation to ensure data integrity and block XSS
 
 3. **Brute-Force Protection**
 
-   * IP-based throttling with `express-rate-limit` to limit repeated login attempts
-   * (Optional) per-account lockout can be added to enhance security further
+   * IP throttling with `express-rate-limit`
+   * Optional per-account lockouts after repeated failures
 
 4. **Password Security**
 
-   * Password hashing using bcrypt with salts
-   * Support for password history and expiry policies to enforce password rotation
+   * bcrypt password hashing with salts
+   * Support for password history and expiry policies
 
 5. **Audit Logging**
 
-   * Middleware logs all user and admin actions, including access attempts and errors
-   * Logs provide traceability for security reviews and forensic analysis
+   * Middleware logs all user/admin actions, access attempts, and errors
+   * Logs enable traceability and forensic analysis
 
 6. **Secure Communication**
 
-   * Enforce HTTPS in production environments to protect data in transit
-   * Configure CORS policies with `withCredentials` enabled for secure cross-origin requests
+   * HTTPS enforced in production
+   * CORS configured with credentials for secure cross-origin requests
 
 7. **Centralized Error Handling**
 
-   * Uniform JSON response format for errors
-   * Sensitive information is never exposed in error messages to clients
+   * Uniform JSON error responses
+   * No sensitive data exposed in error messages
 
 ---
 
+## 💻 Usage
 
+1. **Start MongoDB and Backend:**
 
+```bash
+cd backend
+npm start
+```
 
+2. **In a new terminal, start Frontend:**
 
-**💻 Usage**
+```bash
+cd frontend
+npm start
+```
 
-# 1️⃣  Start MongoDB & backend
-cd backend && npm start
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-# 2️⃣  In a new terminal, start frontend
-cd frontend && npm start
+* Register as a user or log in as an admin
+* Browse movies, select seats, and pay via Khalti sandbox
+* Visit `/admin` for show management and analytics dashboard
 
-Open http://localhost:3000 and:
+---
 
-Register as a user or login as an admin
+## 📝 Notes
 
-Browse movies, pick seats, pay via Khalti sandbox
+* Ensure MongoDB is running and accessible (local or Atlas)
+* For production deployment:
 
-Visit /admin to manage shows & view analytics
+  * Store secrets securely (environment variables or secret managers)
+  * Enable HTTPS with SSL/TLS certificates
+  * Configure SMTP for email and payment gateway credentials properly
+* Max avatar upload file size is configurable via `MAX_FILE_SIZE` environment variable
 
-**📝 Notes**
+---
 
+## 📬 Feedback
 
-Ensure MongoDB is accessible (local URI or Atlas).
-
-For production:
-
-Store secrets securely (env vars / secrets manager).
-
-Enable HTTPS (SSL/TLS).
-
-Configure email (SMTP) & payment gateway credentials.
-
-Max file size for avatar uploads is configurable via MAX_FILE_SIZE env var.
-
-**📬 Feedback**
-
-Questions, bugs, or feature requests? Open an issue or send a pull request — contributions are welcome!
+Questions, bugs, or feature requests? Please open an issue or submit a pull request. Contributions are warmly welcome!
 
