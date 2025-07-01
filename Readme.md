@@ -4,7 +4,7 @@ This project is a Movie Ticketing System built with the MERN Stack — MongoDB
 
 **📑 Table of Contents**
 
-Features
+**Features
 
 Installation
 
@@ -22,7 +22,7 @@ Usage
 
 Notes
 
-Feedback
+**Feedback**
 
 
 
